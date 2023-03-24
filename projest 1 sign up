@@ -1,0 +1,114 @@
+import React from 'react'; 
+
+import { useState } from 'react'; 
+
+ 
+ 
+
+export default function  Signup() { 
+
+  const [cPassword, setCPassword] = useState(''); 
+
+  const [cConfirmPassword, setCConfirmPassword] = useState('');
+
+  const [email, setEmail] = useState(''); 
+
+  const [name, setName] = useState('');
+
+  const handlecPasswordChange =(e) => {
+    setCPassword(e.target.value);
+  }; 
+
+  const handleNameChange =(e) => {
+    setName(e.target.value);
+  };
+
+  const handleEmailChange =(e) => {
+    setEmail(e.target.value);
+  };
+  const handlecConfirmPasswordChange =(e) => {
+    setCConfirmPassword(e.target.value);
+  };
+
+  
+return ( 
+
+
+    <div> 
+<form>
+    <label for="fName"> 
+
+      Full Name:
+
+    </label> 
+
+    <input type="text" value={name} onChange={this.handleNameChange} id='name' placeholder='Full name...'></input>
+
+      
+    <label for="custmerEmail"> 
+
+      Email Address:
+
+    </label> 
+
+    <input type="text" value={email} onChange={this.handleEmailChange} id='email' placeholder='Email address will be user name'></input>
+
+    <label for="password"> 
+
+      Password:
+
+    </label> 
+
+    <input type="text" value={cPassword} onChange={this.handlecPasswordChange} id='password' placeholder='Password...'></input>
+
+    <label for="confrimPassword"> 
+
+    Confrim Password:
+
+    </label> 
+
+    <input type="text" value={cConfirmPassword} onChange={this.handlecConfirmPasswordChange} id='ConPas' placeholder='Confirm Password...'></input>
+
+
+    <button onClick={handleSubmit} className="btn" type="submit">
+Submit
+</button>
+
+
+
+  </form> 
+  </div> 
+
+  ); 
+
+} 
+
+import logo from './logo.svg';
+import './App.css';
+import Signup from './Componets/signUp';
+
+function App() {
+  return (
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <div>
+          <Signup />
+        </div>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
+  );
+}
+
+export default App;
